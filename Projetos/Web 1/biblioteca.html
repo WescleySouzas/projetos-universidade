@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Document</title>
+        <link rel="stylesheet" href="biblioteca.css">
+
+</head>
+
+<body>
+     <div class="barra-lateral">
+        <button class="nav" onclick="history.back()">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        
+    </div>
+    <section class="biblioteca-section">
+  <div class="biblioteca-titulo">Biblioteca  <i class="fa-solid fa-film"></i></div>
+  <form class="barra-pesquisa">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="text" placeholder="Nome filme" name="nome do filme" required>
+  </form>
+ 
+  <div class="linha-filmes">
+    <div class="card-filme"><a href="film.html">
+      <img src="fotos/thebatman.jpg" alt="Capa do Filme The Batman" class="filme-capa" />
+      <div class="filme-titulo">The Batman <i class="fa-solid fa-film"></i></div>
+      <div class="filme-info">
+        <span class="filme-ano">2022</span>
+        <span class="filme-genero">Ação</span>
+        <i class="fa-solid fa-star"> 4.8</i>
+        </a>
+      </div>
+    </div>
+    <div class="card-filme">
+      <img src="fotos/inter.jpg" alt="Capa do Filme Interstellar" class="filme-capa" />
+      <div class="filme-titulo">Interstellar <i class="fa-solid fa-film"></i></div>
+      <div class="filme-info">
+        <span class="filme-ano">2014</span>
+        <span class="filme-genero">Ficção</span>
+          <i class="fa-solid fa-star"> 4.9</i>
+      </div>
+    </div>
+    <div class="card-filme">
+      <img src="fotos/incepition.jpeg" alt="Capa do Filme Inception" class="filme-capa" />
+      <div class="filme-titulo">Inception <i class="fa-solid fa-film"></i></div>
+      <div class="filme-info">
+        <span class="filme-ano">2010</span>
+        <span class="filme-genero">Ação</span>
+          <i class="fa-solid fa-star"> 5</i>
+      </div>
+    </div>
+    <div class="card-filme">
+      <img src="fotos/joker.jpg" alt="Capa do Filme Joker" class="filme-capa" />
+      <div class="filme-titulo">Joker <i class="fa-solid fa-film"></i></div>
+      <div class="filme-info">
+        <span class="filme-ano">2019</span>
+        <span class="filme-genero">Drama</span>
+          <i class="fa-solid fa-star"> 4.2</i>
+      </div>
+    </div>
+    <div class="card-filme">
+      <img src="fotos/pulp.jpeg" alt="Capa do Filme Matrix" class="filme-capa" />
+      <div class="filme-titulo">Pulp Fiction <i class="fa-solid fa-film"></i></div>
+      <div class="filme-info">
+        <span class="filme-ano">1999</span>
+        <span class="filme-genero">Suspence</span>
+          <i class="fa-solid fa-star"> 4.6</i>
+      </div>
+    </div>
+    <!-- Adicione mais cards conforme necessário -->
+  </div>
+</section>
+<footer class="rodape">
+        <p>MetaCritics - 2025</p>
+    
+    </footer>
+</body>
+</html>
