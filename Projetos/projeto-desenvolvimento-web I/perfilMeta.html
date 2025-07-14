@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Perfil - MetaCritics</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="perfilMeta.css">
+    
+    <!-- Sistema de Listas -->
+    <script src="sistemalista.js"></script>
+</head>
+<body>
+    <div class="barra-lateral">
+        <button class="nav" onclick="history.back()">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+    </div>
+    <div class="conteudo">
+        <div class="perfil-principal">
+            <div class="perfil-cabecalho">
+                <img src="fotos-filmes/ney.jpg" alt="Foto de Perfil">
+                <div>
+                    <div class="perfil-infomacao">
+                        <span class="nome">neymar.realoficial123</span>
+                        <i class="fa-solid fa-circle-check verified"></i>
+                        <span class="status" id="total-avaliacoes">700 avaliações</span>
+                        <i class="fa-solid fa-star star"></i>
+                    </div>
+                    <div class="seguidores">
+                        8bi de seguidores; 700k seguidos
+                    </div>
+                    <div class="bio">
+                        Fala rpzd vcs ja me conhecem né, gosto de apostas, filmes #ação e jogos #cs mas no fut o pai domina. Nao traio mais (so de vez em quando rs), amo a patroa.
+                        <div class="hashtags">#paidemenina #santos #cbf</div>
+                    </div>
+                </div>
+            </div>
+            <div class="categorias">
+                <i class="fa-solid fa-list selected"></i>
+                
+            </div>
+            
+            <div class="listas-criadas">
+                <!-- Lista de Desejos -->
+                <div class="lista">
+                    <div class="titulo-lista">
+                        Lista de Desejos
+                        <i class="fa-solid fa-heart" style="color: #e53935;"></i>
+                    </div>
+                    <div class="itens" id="lista-desejos">
+                        <!-- Os itens salvos aparecerão aqui -->
+                    </div>
+                    <div class="lista-avaliacao" id="qtd-desejos">
+                        0 itens <span class="star">
+                            <i class="fa-solid fa-star"></i></span>
+                    </div>
+                </div> 
+            </div>
+        </div>
+
+
+        <div class="avaliacoes">
+            <div class="avaliacoes-cabeçalho">Ultimos Avaliações</div>
+            <div class="avaliacao-c">
+                <div class="avaliador">
+                    <img src="fotos-filmes/ney.jpg" alt="Foto Perfil">
+                    neymar.realoficial123
+                    <i class="fa-solid fa-circle-check verified"></i>
+                </div>
+                <div class="texto">
+                    rpzd n deu tive que trair no meio do filme #erreifiumlk #batmansoueu #copa2026
+                </div>
+                <div class="avaliacao-info">
+                    <span><i class="fa-solid fa-thumbs-up"></i> 7bi</span>
+                    <span><i class="fa-solid fa-comment"></i> 200k</span>
+                    <span><i class="fa-solid fa-star star"></i> 5</span>
+                    <span><i class="fa-solid fa-film"></i> The batman</span>
+                </div>
+               
+            </div>
+             <div class="avaliacao-c">
+                <div class="avaliador">
+                    <img src="fotos-filmes/ney.jpg" alt="Foto Perfil">
+                    neymar.realoficial123
+                    <i class="fa-solid fa-circle-check verified"></i>
+                </div>
+                <div class="texto">
+                Filme top demais, só achei meio longo mas a ação compensa! Recomendo pra quem curte suspense e investigação.                </div>
+                <div class="avaliacao-info">
+                    <span><i class="fa-solid fa-thumbs-up"></i> 123k</span>
+                    <span><i class="fa-solid fa-comment"></i> 20k</span>
+                    <span><i class="fa-solid fa-star star"></i> 5</span>
+                    <span><i class="fa-solid fa-film"></i> Seven</span>
+                </div>
+            </div>
+    </div>
+
+ 
+ <script>
+// Função para carregar a lista de desejos do localStorage e calcular a média de estrelas
+function carregarListaDesejos() {
+    console.log('Carregando lista de desejos...');
+    
+    const lista = JSON.parse(localStorage.getItem('queroVer') || '[]');
+    const container = document.getElementById('lista-desejos');
+    const qtd = document.getElementById('qtd-desejos');
+    
+    console.log('Lista encontrada:', lista);
+    console.log('Container encontrado:', container);
+    
+    if (!container) {
+        console.error('Container lista-desejos não encontrado!');
+        return;
+    }
+    
+    container.innerHTML = '';
+    let somaEstrelas = 0;
+    let qtdComEstrelas = 0;
+
+    if (lista.length === 0) {
+        container.innerHTML = '<div style="color: #888; padding: 8px;">Nenhum item salvo ainda.</div>';
+        if (qtd) qtd.innerHTML = '0 itens <span class="star"><i class="fa-solid fa-star"></i></span> Média: 0';
+        console.log('Lista vazia');
+        return;
+    }
+    
+    lista.forEach((item, index) => {
+        console.log(`Processando item ${index + 1}:`, item);
+        
+        // Definir ícone e link baseado no tipo
+        let icone = 'fa-star'; // padrão
+        let linkPagina = '#'; // padrão
+        
+        if (item.tipo === 'filme') {
+            icone = 'fa-film';
+            linkPagina = 'film.html';
+        } else if (item.tipo === 'musica') {
+            icone = 'fa-music';
+            linkPagina = 'musica.html';
+        } else if (item.tipo === 'jogo') {
+            icone = 'fa-gamepad';
+            linkPagina = 'game.html';
+        }
+        
+        // Criar elemento da lista
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'item-lista';
+        itemDiv.setAttribute('data-link', linkPagina);
+        itemDiv.style.cursor = 'pointer';
+        itemDiv.innerHTML = `${item.titulo || 'Sem título'} <i class="fa-solid ${icone}"></i>`;
+        
+        // Adicionar evento de clique para navegar
+        itemDiv.addEventListener('click', function() {
+            if (linkPagina !== '#') {
+                window.location.href = linkPagina;
+            }
+        });
+        
+        container.appendChild(itemDiv);
+
+        // Calcular média das estrelas usando as avaliações dinâmicas
+        let mediaItem = item.estrelas; // Valor padrão
+        
+        // Buscar avaliações específicas do item
+        let chaveAvaliacao = '';
+        if (item.tipo === 'filme') {
+            chaveAvaliacao = 'avaliacoes_filme_' + item.id;
+        } else if (item.tipo === 'musica') {
+            chaveAvaliacao = 'avaliacoes_musica_' + item.id;
+        } else if (item.tipo === 'jogo') {
+            chaveAvaliacao = 'avaliacoes_jogo_' + item.id;
+        }
+        
+        if (chaveAvaliacao) {
+            const avaliacoesData = localStorage.getItem(chaveAvaliacao);
+            if (avaliacoesData) {
+                const avaliacoes = JSON.parse(avaliacoesData);
+                if (avaliacoes.length > 0) {
+                    const somaAvaliacoes = avaliacoes.reduce((acc, avaliacao) => acc + avaliacao.rating, 0);
+                    mediaItem = (somaAvaliacoes / avaliacoes.length);
+                    console.log(`Item ${item.titulo}: ${avaliacoes.length} avaliações, média: ${mediaItem.toFixed(1)}`);
+                }
+            }
+        }
+        
+        if (mediaItem && !isNaN(mediaItem)) {
+            somaEstrelas += Number(mediaItem);
+            qtdComEstrelas++;
+        }
+    });
+
+    // Calcular e exibir média
+    let media = qtdComEstrelas > 0 ? (somaEstrelas / qtdComEstrelas).toFixed(1) : 0;
+    if (qtd) {
+        qtd.innerHTML = `${lista.length} item${lista.length > 1 ? 's' : ''} <span class="star"><i class="fa-solid fa-star"></i></span> Média: ${media}`;
+    }
+    
+    console.log(`Carregados ${lista.length} itens. Média geral: ${media}`);
+}
+
+// Função para atualizar a lista em tempo real quando algo for adicionado/removido
+function atualizarListaDesejos() {
+    carregarListaDesejos();
+}
+
+// Função para contar total de avaliações do usuário
+function contarTotalAvaliacoes() {
+    let totalAvaliacoes = 700; // Valor base/inicial
+    
+    // Buscar todas as avaliações do usuário
+    for (let i = 0; i < localStorage.length; i++) {
+        const chave = localStorage.key(i);
+        if (chave && (chave.startsWith('avaliacoes_filme_') || 
+                     chave.startsWith('avaliacoes_musica_') || 
+                     chave.startsWith('avaliacoes_jogo_'))) {
+            try {
+                const avaliacoes = JSON.parse(localStorage.getItem(chave) || '[]');
+                totalAvaliacoes += avaliacoes.length;
+            } catch (e) {
+                console.error('Erro ao contar avaliações:', e);
+            }
+        }
+    }
+    
+    // Atualizar o contador na tela
+    const totalElement = document.getElementById('total-avaliacoes');
+    if (totalElement) {
+        totalElement.textContent = `${totalAvaliacoes} avaliações`;
+    }
+    
+    return totalAvaliacoes;
+}
+
+// Listener para mudanças no localStorage (funciona quando outra aba/página modifica)
+window.addEventListener('storage', function(e) {
+    if (e.key === 'queroVer') {
+        console.log('Lista de desejos foi modificada em outra página, atualizando...');
+        carregarListaDesejos();
+    }
+});
+
+// Listener para evento customizado de mudança na lista
+window.addEventListener('queroVerChanged', function() {
+    console.log('Evento customizado recebido, atualizando lista...');
+    carregarListaDesejos();
+});
+
+// Listener para evento de nova avaliação
+window.addEventListener('avaliacaoAdicionada', function(event) {
+    console.log('Nova avaliação adicionada, atualizando perfil...', event.detail);
+    carregarListaDesejos();
+    contarTotalAvaliacoes();
+});
+
+// Carrega ao abrir o perfil
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM carregado, iniciando carregamento da lista...');
+    carregarListaDesejos();
+    contarTotalAvaliacoes();
+    
+    // Verificar periodicamente por mudanças (backup para garantir sincronia)
+    setInterval(function() {
+        const listaAtual = JSON.parse(localStorage.getItem('queroVer') || '[]');
+        const containerAtual = document.getElementById('lista-desejos');
+        
+        if (containerAtual) {
+            const itensNaLista = containerAtual.querySelectorAll('.item-lista').length;
+            const mensagemVazia = containerAtual.querySelector('div[style*="color: #888"]');
+            const temMensagemVazia = mensagemVazia !== null;
+            
+            // Se há itens na lista mas container mostra vazio, ou vice-versa
+            if ((listaAtual.length > 0 && temMensagemVazia) || 
+                (listaAtual.length === 0 && !temMensagemVazia && itensNaLista > 0) ||
+                (listaAtual.length !== itensNaLista && !temMensagemVazia)) {
+                console.log('Detectada inconsistência, atualizando lista...');
+                carregarListaDesejos();
+            }
+        }
+    }, 3000); // Verifica a cada 3 segundos
+});
+</script>
+</body>
+</html>

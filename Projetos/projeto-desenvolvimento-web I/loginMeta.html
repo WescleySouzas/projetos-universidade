@@ -2,30 +2,48 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>MetaCritics - Login</title>
+    <title>SuperCritics - Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="LoginMeta.css">
+    <script>
+        function validarLogin() {
+            const username = document.querySelector('input[name="username"]').value;
+            const password = document.querySelector('input[name="password"]').value;
+            
+            // Verifica se os campos estão preenchidos
+            if (username === '' || password === '') {
+                alert('Preencha todos os campos!');
+            }
+            // Verifica se as credenciais estão corretas
+            else if (username === 'neymarofc' && password === '1234') {
+                window.location.href = 'Meta.html';
+            }
+            else {
+                alert('Email ou senha incorretos!');
+            }
+        }
+    </script>
 </head>
 <body>
 <div>
         <div>
-            <h1>MetaCritics</h1>
+            <h1>SuperCritics</h1>
             <h2>Sempre<br> conectado</h2>
             <p>
                 Avalie, descubra e discuta sobre filmes, séries, jogos, músicas e livros com seus amigos e com o mundo!!
             </p>
-            <button class="saiba-mais">Saiba mais</button>
+            
         </div>
         <form class="login-box" id="loginForm" autocomplete="off">
             <div class="icone-perfil">
-                <img src="fotos/Meta.png" alt="foto-marca" height="300" width="300">
+                <img src="fotos-filmes/Meta.png" alt="foto-marca" height="300" width="300">
             </div>
             <input type="text" placeholder="Username" name="username" required>
             <input type="password" placeholder="Password" name="password" required>
-            <span class="forgot">Forgot Password?</span>
-            <a href="Meta.html" class="login-btn" > Login</a>
-            <button type="button" class="register-btn">REGISTER</button>
+            <span class="forgot">Esqueceu a senha?</span>
+            <button type="button" class="login-btn" onclick="validarLogin()">Login</button>
+            <button type="button" class="register-btn">Registrar</button>
             <div class="icones-redes">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>

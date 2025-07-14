@@ -202,24 +202,23 @@
 }
 
 .barra-lateral button.nav {
-    background: var(--roxo); /* roxo igual perfilMeta */
+    background: #454248;
     border: none;
-    border-radius: 50%;
+    border-radius: 8px;
     width: 48px;
     height: 48px;
     color: var(--branco);
-    font-size: 2rem;
+    font-size: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 1rem;
     cursor: pointer;
-    transition: filter 0.2s;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    transition: opacity 0.2s;
 }
 
 .barra-lateral button.nav:hover {
-    filter: brightness(6);
+    opacity: 0.8;
 }
 @media (max-width: 700px) {
     .filme-detalhe-topo {
@@ -234,4 +233,178 @@
 }
 body {
     background: var(--azul-escuro);
+}
+
+/* Modal Styles para Avaliação */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(3px);
+}
+
+.modal-content {
+    background-color: var(--branco);
+    margin: 3% auto;
+    padding: 0;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    animation: modalFadeIn 0.3s ease;
+    border: 2px solid var(--azul-medio);
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    background: var(--azul-escuro);
+    color: var(--branco);
+    padding: 1.5rem 2rem;
+    border-radius: 6px 6px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--azul-medio);
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.close {
+    color: var(--branco);
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: var(--amarelo-star);
+}
+
+/* Form Styles */
+#form-avaliar-filme {
+    padding: 2rem;
+    color: var(--cinza-texto);
+    background: var(--branco);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-weight: bold;
+    color: var(--azul-escuro);
+    font-size: 1.1rem;
+}
+
+.form-group textarea {
+    width: calc(100% - 1.6rem);
+    padding: 1rem;
+    border: 2px solid var(--cinza-coment);
+    border-radius: 6px;
+    font-size: 1rem;
+    background: var(--branco);
+    color: var(--cinza-texto);
+    transition: border-color 0.3s;
+    font-family: inherit;
+    resize: vertical;
+}
+
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--azul-medio);
+    box-shadow: 0 0 0 3px rgba(35, 36, 77, 0.1);
+}
+
+/* Rating Stars */
+.rating {
+    display: flex;
+    gap: 0.3rem;
+    margin: 0.5rem 0;
+}
+
+.star {
+    font-size: 2rem;
+    color: #ddd;
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+}
+
+.star:hover,
+.star.hover {
+    color: var(--amarelo-star);
+    transform: scale(1.1);
+}
+
+.star.selected {
+    color: var(--amarelo-star);
+}
+
+/* Form Buttons */
+.form-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--cinza-coment);
+}
+
+.form-buttons button {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    min-width: 120px;
+}
+
+#cancelar-avaliacao-btn {
+    background: var(--cinza-coment);
+    color: var(--cinza-texto);
+    border: 2px solid var(--cinza-coment);
+}
+
+#cancelar-avaliacao-btn:hover {
+    background: #bbb;
+    transform: translateY(-1px);
+}
+
+.form-buttons button[type="submit"] {
+    background: var(--azul-escuro) !important;
+    color: var(--branco) !important;
+    border: 2px solid var(--azul-escuro) !important;
+}
+
+.form-buttons button[type="submit"]:hover {
+    background: var(--azul-medio) !important;
+    border-color: var(--azul-medio) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(10, 13, 26, 0.3);
 }

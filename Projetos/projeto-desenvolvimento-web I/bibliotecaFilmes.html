@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Filmes - MetaCritics</title>
+        <link rel="stylesheet" href="bibliotecafilmes.css">
+
+</head>
+
+<body>
+     <div class="barra-lateral">
+        <button class="nav" onclick="history.back()">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+    </div>
+    <main class="conteudo-principal">
+<!-- Barra de pesquisa -->
+      <div class="container-filtros">
+        <div class="container-pesquisa">
+          <input type="text" placeholder="Busque aqui" class="input-pesquisa">
+        </div>
+      </div>
+
+<!-- Parte dos filmes  -->
+      <section class="secao-popular">
+        <div class="cabecalho-secao">
+          <h2 class="titulo-secao"><b>FILMES POPULARES</b></h2>
+          <a href="#" class="link-mais">MAIS</a>
+        </div>
+        <div class="container-carrossel">
+          <div class="carrossel-filmes">
+            <div class="card-poster">
+              <a href="film.html">
+                <img src="fotos-filmes/thebatman.jpg" alt="The Batman" class="imagem-poster" />
+              </a>
+            </div>
+            <div class="card-poster">
+              <img src="fotos-filmes/inter.jpg" alt="Interstellar" class="imagem-poster" />
+            </div>
+            <div class="card-poster">
+              <img src="fotos-filmes/incepition.jpeg" alt="Inception" class="imagem-poster" />
+            </div>
+            <div class="card-poster">
+              <img src="fotos-filmes/joker.jpg" alt="Joker" class="imagem-poster" />
+            </div>
+            <div class="card-poster">
+              <img src="fotos-filmes/lala.jpg" alt="La La Land" class="imagem-poster" />
+            </div>
+            <div class="card-poster">
+              <img src="fotos-filmes/parasite.jpg" alt="PARASITA" class="imagem-poster" />
+            </div>
+            <div class="card-poster">
+              <img src="fotos-filmes/mine.jpg" alt="PARASITA" class="imagem-poster" />
+            </div>
+             <div class="card-poster">
+              <img src="fotos-filmes/carros.jpg" alt="CARROS 2" class="imagem-poster" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+<!-- Parte das series  -->
+      <section class="secao-popular">
+        <div class="cabecalho-secao">
+          <h2 class="titulo-secao"><b>SERIES POPULARES</b></h2>
+          <a href="#" class="link-mais">MAIS</a>
+        </div>
+        <div class="container-carrossel">
+          <div class="carrossel-filmes">
+            <div class="card-poster">
+              <img src="fotos-series/ncis.webp" alt="ncis-banner" class="imagem-poster" />
+            </div>
+            <div class="card-poster">
+              <img src="fotos-series/game-of-thones.webp" alt="game-of-thones-banner" class="imagem-poster" />
+            </div>
+            <div class="card-poster">
+              <img src="fotos-series/th-walking-dead.webp" alt="th-walking-dead-banner" class="imagem-poster" />
+            </div>
+            <div class="card-poster">
+              <img src="fotos-series/breaking-bad.webp" alt="breaking-bad-banner" class="imagem-poster" />
+            </div>
+             <div class="card-poster">
+              <img src="fotos-series/stranger-things.webp" alt="strangerthings-banner" class="imagem-poster" />
+            </div>
+             <div class="card-poster">
+              <img src="fotos-series/supernatural.webp" alt="supernatural" class="imagem-poster" />
+            </div>
+             <div class="card-poster">
+              <img src="fotos-series/vikings.webp" alt="vikings" class="imagem-poster" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+<!-- Comentarios populares sobre filmes e series-->
+      <section class="secao-reviews">
+        <div class="cabecalho-secao">
+          <h2 class="titulo-secao"><b>REVIEWS POPULARES</b></h2>
+          <a href="#" class="link-mais">MAIS</a>
+        </div>
+        <div class="container-reviews">
+          <div class="card-review">
+            <img src="fotos-filmes/thebatman.jpg" alt="The Batman" class="poster-review" />
+            <div class="conteudo-review">
+              <div class="cabecalho-review">
+                <h3 class="titulo-filme-review">The Batman <span class="ano-review">2022</span></h3>
+                <div class="autor-review">
+                  <img src="fotos-filmes/perfil3.webp" alt="Autor" class="avatar-autor" />
+                  <span class="nome-autor">João Silva</span>
+                  <div class="avaliacao">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-solid fa-heart"></i>
+                  </div>
+                </div>
+              </div>
+              <p class="texto-review">
+                Uma visão sombria e realista do Batman que realmente captura a essência do detetive. 
+                Robert Pattinson entrega uma performance convincente e Matt Reeves criou uma Gotham atmosférica.
+              </p>
+              <div class="estatisticas-review">
+                <span class="likes-review"><i class="fa-solid fa-heart"></i> Curtido por 8.615 pessoas</span>
+              </div>
+            </div>
+          </div>
+
+        
+
+    
+        </div>
+      </section>
+    </main>
+
+
+
+<footer class="rodape">
+        <p>MetaCritics - 2025</p>
+    </footer>
+</body>
+</html>

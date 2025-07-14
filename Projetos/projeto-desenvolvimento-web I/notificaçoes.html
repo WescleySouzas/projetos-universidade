@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name ="autore" content ="Wescley | Victor | Gabriel ">
+    <title>SuperCritics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="notificaçoes.css">
+    <script src="Metajava.js" defer></script>
+    <script src="sistemaLike.js" defer></script>
+
+</head>
+<body>
+<!-- Cabeçalho-->
+    <header>
+        <nav class="barra-nav">
+            <span class="logo" >Notificação</span>
+            <ul class="icones-nav">
+                <a href="Meta.html"><li><i class="fa-solid fa-house"></i><br>Home</li></a>
+            </ul>
+        </nav>
+    </header>
+<!-- Barra lateral -->
+    <aside class="barra-lateral">
+        <div class="foto-perfil">
+            <!--adicionar foto de perfil-->
+            <!-- Usando href para ir para o perfil-->
+            <a href="perfilMeta.html">
+            <img src="fotos-filmes/ney.jpg" alt="foto-perfil" width="50" height="50">
+            </a>
+        </div>
+        
+    </aside>
+<!--Menu pirncipal -->
+    <main>
+        <section class="Menu-Principal">
+            <section class="publicacao">
+            <div class="usuario">
+                
+            </div>
+            <div class="avaliaçao">
+                 <i class="fa-solid fa-bell"></i>
+                <span> LANÇAMENTO DO FILME THE BATMAN, O FILME MAIS ESPERADO DO ANO, NÃO PERCA! </span>
+            </div>
+            <div class="foto">
+                <img src="fotos-filmes/thebatman.jpg" alt="batman" width="300" height="200">
+                <a href="film.html">
+                 <span>The Batman <i class="fa-solid fa-film"></i></span>    
+                 </a>
+            </div>
+            
+            
+            </div>
+            </section>
+
+            <section class="publicacao">
+            <div class="usuario">
+                
+            </div>
+            <div class="avaliaçao">
+                 <i class="fa-solid fa-bell"></i>
+                <span> LANÇAMENTO DO JOGO Death Stranding 2 VEJA AONDE ESTA DISPONIVEL</span>
+            </div>
+            <div class="foto">
+                <img src="fotos-jogos/Ds1.jpg" alt="batman" width="300" height="200">
+                <a href="game.html">
+                 <span>Death Stranding 2 <i class="fa-solid fa-film"></i></span>    
+                 </a>
+            </div>
+            
+            
+            </div>
+            </section>
+
+            
+
+            
+         
+            </div>
+            </div>
+            </section>
+
+            
+            </section>
+
+            </section>
+
+            
+
+        </section>
+    </main>
+<!--  Destaques-->
+   
+    <footer class="rodape">
+        <p>SuperCritics - 2025</p>
+    
+    </footer>
+
+<!--Adicionar Nova Publicação -->
+    <div id="modal-nova-publicacao" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Nova Publicação</h2>
+                <span class="close">&times;</span>
+            </div>
+            <form id="form-nova-publicacao">
+                <div class="form-group">
+                    <label for="tipo-conteudo">Tipo:</label>
+                    <select id="tipo-conteudo" required>
+                        <option value="">Selecione...</option>
+                        <option value="filme">Filmes/Série</option>
+                        <option value="musica">Música</option>
+                        <option value="jogo">Jogos</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="nome-conteudo">Nome:</label>
+                    <input type="text" id="nome-conteudo" required placeholder="Digite o nome...">
+                </div>
+                
+                <div class="form-group">
+                    <label for="foto-conteudo">Foto (URL da imagem):</label>
+                    <input type="url" id="foto-conteudo" placeholder="https://exemplo.com/imagem.jpg ou fotos-filmes/nome.jpg">
+                    <small style="color: #888;">Cole o link da imagem ou use fotos-filmes/nome.jpg</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="avaliacao">Avaliação:</label>
+                    <div class="rating">
+                        <span class="star" data-rating="1">★</span>
+                        <span class="star" data-rating="2">★</span>
+                        <span class="star" data-rating="3">★</span>
+                        <span class="star" data-rating="4">★</span>
+                        <span class="star" data-rating="5">★</span>
+                    </div>
+                    <input type="hidden" id="rating-value" value="0">
+                </div>
+                
+                <div class="form-group">
+                    <label for="comentario-post">Comentário:</label>
+                    <textarea id="comentario-post" rows="3" placeholder="Sua opinião..."></textarea>
+                </div>
+                
+                <div class="form-buttons">
+                    <button type="button" id="cancelar-btn">Cancelar</button>
+                    <button type="submit">Publicar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,831 @@
+/* Paleta baseada na imagem */
+:root {
+    --azul-escuro: #0a0d1a;
+    --azul-medio: #23244d;
+    --cinza-card: #e0e0e0;
+    --cinza-coment: #cccccc;
+    --branco: #fff;
+    --roxo-borda: #454248;
+    --amarelo-star: #ffd700;
+    --azul-verificado: #2196f3;
+    --cinza-texto: #222;
+}
+
+/* Fundo geral */
+body {
+    background: var(--azul-escuro);
+    color: var(--branco);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Barra de navegação superior */
+header {
+    background: var(--azul-escuro);
+    border-bottom: 4px solid var(--roxo-borda);
+    padding: 0;
+}
+
+.barra-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+    padding: 1.2rem 2rem 1.2rem 6rem;
+}
+
+.logo {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: var(--branco);
+    margin-right: 2rem;
+}
+
+.icones-nav {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.icones-nav li {
+    text-align: center;
+    color: var(--branco);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.icones-nav li:hover {
+    color: var(--roxo-borda);
+}
+
+.menu {
+    background: none;
+    border: none;
+    color: var(--branco);
+    font-size: 2rem;
+    cursor: pointer;
+    margin-right: 1.5rem;
+}
+
+/* Search Container */
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    padding: 0.3rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.search-container:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--roxo-borda);
+}
+
+.search-container:focus-within {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: var(--roxo-borda);
+    box-shadow: 0 0 20px rgba(108, 44, 255, 0.3);
+}
+
+#entrada {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--branco);
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    width: 200px;
+    transition: width 0.3s ease;
+}
+
+#entrada::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+}
+
+#entrada:focus {
+    width: 250px;
+}
+
+.btn-ir {
+    background: linear-gradient(135deg, var(--roxo-borda), #8b5cf6);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    color: var(--branco);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(108, 44, 255, 0.3);
+}
+
+.btn-ir:hover {
+    background: linear-gradient(135deg, #8b5cf6, var(--roxo-borda));
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(108, 44, 255, 0.4);
+}
+
+.btn-ir:active {
+    transform: translateY(0) scale(0.95);
+}
+
+/* Barra lateral */
+.barra-lateral {
+    background: var(--azul-escuro);
+    width: 90px;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.08);
+}
+
+.foto-perfil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.foto-perfil img {
+    border-radius: 50%;
+    object-fit: cover;
+     width: 45px;
+    height: 45px;
+}
+
+.foto-perfil i {
+    font-size: 2.5rem;
+    color: var(--branco); 
+}
+
+.barra-lateral span {
+    color: var(--branco);
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.menu-lateral {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.menu-lateral li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.menu-lateral li i {
+    font-size: 1.5rem;
+    color: var(--branco);
+    transition: color 0.2s;
+    cursor: pointer;
+}
+
+.menu-lateral li i:hover {
+    color: var(--roxo-borda);
+}
+
+/* Estilos para Nova Publicação */
+.menu-lateral li#nova-publicacao-btn {
+    background: var(--branco);
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 auto;
+    border: 2px solid var(--roxo-borda);
+}
+
+.menu-lateral li#nova-publicacao-btn:hover {
+    background: var(--cinza-coment);
+    transform: scale(1.1);
+}
+
+.menu-lateral li#nova-publicacao-btn i {
+    color: var(--azul-escuro) !important;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(3px);
+}
+
+.modal-content {
+    background-color: var(--branco);
+    margin: 3% auto;
+    padding: 0;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    animation: modalFadeIn 0.3s ease;
+    border: 2px solid var(--azul-medio);
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    background: var(--azul-escuro);
+    color: var(--branco);
+    padding: 1.5rem 2rem;
+    border-radius: 6px 6px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--azul-medio);
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.close {
+    color: var(--branco);
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: var(--amarelo-star);
+}
+
+/* Form Styles */
+#form-nova-publicacao {
+    padding: 2rem;
+    color: var(--cinza-texto);
+    background: var(--branco);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-weight: bold;
+    color: var(--azul-escuro);
+    font-size: 1.1rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: calc(100% - 1.6rem);
+    padding: 1rem;
+    border: 2px solid var(--cinza-coment);
+    border-radius: 6px;
+    font-size: 1rem;
+    background: var(--branco);
+    color: var(--cinza-texto);
+    transition: border-color 0.3s;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--azul-medio);
+    box-shadow: 0 0 0 3px rgba(35, 36, 77, 0.1);
+}
+
+/* Rating Stars */
+.rating {
+    display: flex;
+    gap: 0.3rem;
+    margin: 0.5rem 0;
+}
+
+.star {
+    font-size: 2rem;
+    color: #ddd;
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+}
+
+.star:hover,
+.star.hover {
+    color: var(--amarelo-star);
+    transform: scale(1.1);
+}
+
+.star.selected {
+    color: var(--amarelo-star);
+}
+
+/* Form Buttons */
+.form-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--cinza-coment);
+}
+
+.form-buttons button {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    min-width: 120px;
+}
+
+#cancelar-btn {
+    background: var(--cinza-coment);
+    color: var(--cinza-texto);
+    border: 2px solid var(--cinza-coment);
+}
+
+#cancelar-btn:hover {
+    background: #bbb;
+    transform: translateY(-1px);
+}
+
+.form-buttons button[type="submit"] {
+    background: var(--azul-escuro) !important;
+    color: var(--branco) !important;
+    border: 2px solid var(--azul-escuro) !important;
+}
+
+.form-buttons button[type="submit"]:hover {
+    background: var(--azul-medio) !important;
+    border-color: var(--azul-medio) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(10, 13, 26, 0.3);
+}
+
+/* Main - Publicações */
+main {
+    margin-left: 110px;
+    margin-right: 350px;
+    padding: 2rem 1rem 2rem 1rem;
+    min-height: 100vh;
+}
+
+.Menu-Principal {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Card de publicação */
+.publicacao, .publicaçao {
+    background: var(--cinza-card);
+    color: var(--cinza-texto);
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    width: 480px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.usuario {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-weight: bold;
+    margin-bottom: 0.7rem;
+    color: var(--cinza-texto);
+}
+
+.usuario i {
+    color: var(--azul-escuro);
+    font-size: 2rem;
+    background: var(--cinza-coment);
+    border-radius: 50%;
+    padding: 0.2em;
+}
+
+.nome-usuario {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.avaliaçao, .avaliação {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-bottom: 0.7rem;
+    font-size: 1.1rem;
+}
+
+.avaliaçao i, .avaliação i {
+    color: var(--amarelo-star);
+    font-size: 1.2rem;
+}
+
+.foto {
+    margin-bottom: 0.7rem;
+    text-align: center;
+}
+
+.foto img {
+    border-radius: 10px;
+    border: 2px solid var(--azul-medio);
+    margin-bottom: 0.3rem;
+    width: 95%;
+    max-width: 320px;
+    height: auto;
+}
+
+.foto span {
+    display: block;
+    font-weight: bold;
+    margin-top: 0.3rem;
+}
+
+.reacoes {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 0.7rem;
+    font-size: 1.1rem;
+}
+
+.reacoes i {
+    color: var(--azul-escuro);
+    margin-right: 0.3rem;
+}
+
+/* Estilo para botão de like */
+.like-btn {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.like-btn:hover {
+    transform: scale(1.1);
+}
+
+.like-btn.curtido {
+    color: #1976d2 !important;
+}
+
+.like-btn.curtido i {
+    color: #1976d2 !important;
+}
+
+.comentario {
+    background: var(--cinza-coment);
+    border-radius: 10px;
+    padding: 0.7rem 1rem;
+    margin-top: 0.7rem;
+    color: var(--cinza-texto);
+    font-size: 1rem;
+}
+
+.comentario li {
+    display: inline;
+    font-weight: bold;
+    color: var(--azul-verificado);
+}
+
+.comentario i.fa-circle-check {
+    color: var(--azul-verificado);
+    margin-left: 0.2em;
+}
+
+/* Patrocínio */
+.Divugaçao {
+    background: var(--azul-medio);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-top: 2rem;
+    color: var(--branco);
+    text-align: center;
+}
+
+.Divugaçao img {
+    border-radius: 8px;
+    border: 2px solid var(--roxo-borda);
+}
+
+/* Destaques */
+.destaques {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 320px;
+    height: 100vh;
+    background: var(--azul-escuro);
+    color: var(--branco);
+    padding: 2rem 1.5rem;
+    box-shadow: -2px 0 8px rgba(0,0,0,0.10);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border-left: 1px solid rgba(23, 14, 65, 0.1); 
+    padding-top: 120px; 
+}
+
+.destaques h2 {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.destaques ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.destaques li {
+    margin-bottom: 0.8rem;
+    color: var(--branco);
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.destaques li a {
+    color: #8b5cf6;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.destaques li a:hover {
+    color: #a78bfa;
+    text-decoration: underline;
+}
+
+.pesquisas-em-destaque,
+.Lista-em-destaque {
+    background: rgba(255, 255, 255, 0.03); /* Fundo muito sutil */
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.08); /* Borda sutil */
+}
+
+/* Posicionamento específico para principais pesquisas */
+.pesquisas-em-destaque {
+    margin-top: 2rem; /* Reduzido para ficar mais próximo do visual da imagem */
+}
+
+/* Estilos para Etapas do Modal */
+.etapa {
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.etapa.hidden {
+    display: none;
+}
+
+.etapa-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--cinza-coment);
+}
+
+.etapa-header h3 {
+    color: var(--azul-escuro);
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.progresso {
+    background: var(--azul-medio);
+    color: var(--branco);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* Cards de Tipo */
+.tipo-opcoes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.tipo-card {
+    background: var(--branco);
+    border: 3px solid var(--cinza-coment);
+    border-radius: 12px;
+    padding: 2rem 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.tipo-card:hover {
+    border-color: var(--azul-medio);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(35, 36, 77, 0.2);
+}
+
+.tipo-card.selected {
+    border-color: var(--azul-escuro);
+    background: var(--azul-escuro);
+    color: var(--branco);
+    transform: scale(1.05);
+}
+
+.tipo-card i {
+    font-size: 3rem;
+    color: var(--azul-medio);
+    transition: color 0.3s;
+}
+
+.tipo-card.selected i {
+    color: var(--amarelo-star);
+}
+
+.tipo-card span {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--cinza-texto);
+}
+
+.tipo-card.selected span {
+    color: var(--branco);
+}
+
+/* Botões de Próximo */
+.btn-proximo {
+    background: var(--azul-medio);
+    color: var(--branco);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: all 0.3s;
+    align-self: flex-end;
+}
+
+.btn-proximo:hover {
+    background: var(--azul-escuro);
+    transform: translateX(5px);
+}
+
+/* Texto da Avaliação */
+.rating-text {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--cinza-texto);
+    text-align: center;
+    min-height: 30px;
+}
+
+/* Botão Voltar */
+#voltar-btn {
+    background: var(--cinza-coment);
+    color: var(--cinza-texto);
+    border: 2px solid var(--cinza-coment);
+}
+
+#voltar-btn:hover {
+    background: #bbb;
+    transform: translateX(-3px);
+}
+
+/* Responsivo */
+@media (max-width: 1100px) {
+    .destaques {
+        display: none;
+    }
+    main {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 800px) {
+    .barra-lateral {
+        display: none;
+    }
+    main {
+        margin-left: 0;
+        padding: 1rem;
+    }
+    .publicacao, .publicaçao {
+        width: 98%;
+        padding: 1rem 0.5rem;
+    }
+    /* Rodape */
+
+}
+.rodape {
+        text-align: center;
+    }
+/* Responsivo para Modal */
+@media (max-width: 600px) {
+    .modal-content {
+        margin: 5% auto;
+        width: 95%;
+        max-height: 85vh;
+    }
+    
+    #form-nova-publicacao {
+        padding: 1.5rem;
+    }
+    
+    .form-buttons {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .form-buttons button {
+        width: 100%;
+        min-width: auto;
+    }
+}
+
+/* Responsivo para Cards de Tipo */
+@media (max-width: 600px) {
+    .tipo-opcoes {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+    
+    .tipo-card {
+        padding: 1.5rem 1rem;
+    }
+    
+    .tipo-card i {
+        font-size: 2.5rem;
+    }
+}
