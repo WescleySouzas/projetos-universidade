@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Salvar item</title>
+</head>
+<body>
+  <h2>Item para salvar</h2>
+  <a href="https://www.google.com" id="item-link">Google</a>
+  <button onclick="salvarItem()">Salvar item</button>
+
+  <p><a href="lista.html">Ver lista de itens salvos</a></p>
+
+  <script>
+    function salvarItem() {
+      const link = document.getElementById('item-link').href;
+
+      // Recupera lista antiga do localStorage (ou cria lista vazia)
+      let lista = JSON.parse(localStorage.getItem('listaDeLinks')) || [];
+
+      // Adiciona o novo link
+      lista.push(link);
+
+      // Salva de novo no localStorage
+      localStorage.setItem('listaDeLinks', JSON.stringify(lista));
+
+      alert("Item salvo com sucesso!");
+    }
+  </script>
+</body>
+</html>

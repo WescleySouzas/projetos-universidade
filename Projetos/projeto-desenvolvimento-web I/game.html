@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Death Stranding 2: On the beach - MetaCritics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="film.css">
+    <script src="filmModal.js" defer></script>
+    
+</head>
+<body>
+    <div class="barra-lateral">
+        <button class="nav" onclick="history.back()">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        
+    </div>
+    <section class="filme-detalhe-container">
+        <div class="filme-detalhe-topo">
+            <img src="fotos-jogos/Ds1.jpg" alt="Capa do ds2" class="filme-detalhe-capa" />
+            <div class="filme-detalhe-info">
+                <div class="filme-detalhe-titulo">
+                    Death Stranding 2: On the beach <i class="fa-solid fa-gamepad"></i>
+                </div>
+                <div class="filme-detalhe-meta">
+                    <span>2025</span>
+                    <span class="filme-genero">Ação, Aventura, Sci-Fi</span>
+                    <span><i class="fa-solid fa-star"></i> <span id="media-estrelas">4.5</span></span>
+                </div>
+
+                <div class="filme-detalhe-sinopse">
+                    Em um futuro fragmentado por eventos misteriosos, o equilíbrio entre vida e 
+                    morte continua instável. Em Death Stranding 2, novos caminhos se abrem em uma jornada que desafia os limites 
+                    da conexão humana e da sobrevivência. Prepare-se para explorar um mundo ainda mais enigmático, onde cada passo
+                    pode mudar o destino da humanidade.
+                </div>
+                <div class="elenco-direcao">
+                    <strong>Desenvolvedor:</strong> Kojima Productions
+                    <br>
+                    <strong>Publisher:</strong> Sony Interactive Entertainment
+                    <br>
+                    <strong>Plataformas:</strong> PlayStation 5, PC
+                </div>
+            </div>
+        </div>
+        <div class="avaliar-filme">
+            <div style="text-align: center; margin-bottom: 15px;">
+                <button id="nova-avaliacao-btn" style="
+                    background: #1976d2;
+                    color: white;
+                    border: none;
+                    padding: 12px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    font-size: 20px;
+                    width: 50px;
+                    height: 50px;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3);
+                    transition: all 0.3s;
+                    margin-right: 15px;
+                " onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                
+                <button id="quero-ver-btn" style="
+                    background: #e53935;
+                    color: white;
+                    border: none;
+                    padding: 12px 20px;
+                    border-radius: 25px;
+                    cursor: pointer;
+                    font-size: 14px;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 8px;
+                    box-shadow: 0 4px 12px rgba(229, 57, 53, 0.3);
+                    transition: all 0.3s;
+                " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    <i class="fa-solid fa-heart"></i> Quero Jogar
+                </button>
+                <span id="salvo-msg-inline" style="display:none; color: #43a047; margin-left: 15px; font-weight: bold; font-size: 14px;">Salvo no perfil!</span>
+            </div>
+        </div>
+        <div class="comentarios-titulo">Comentários</div>
+        <div class="comentarios-lista">
+            <div class="comentario-card">
+                <img src="fotos-filmes/ney.jpg" alt="Foto do usuário">
+                <div class="comentario-conteudo">
+                    <div class="comentario-usuario">neymar.realoficial123 <i class="fa-solid fa-circle-check" style="color: var(--azul-verificado);"></i></div>
+                    <div class="comentario-texto">
+                        Jogao Kojima genio!!!
+                    </div>
+                    <div class="comentario-reacoes">
+                        <i class="fa-solid fa-thumbs-up"></i> 7bi
+                        <i class="fa-solid fa-thumbs-down"></i> 1k
+                    </div>
+                </div>
+            </div>
+            
+            <div class="comentario-card">
+                <img src="fotos-filmes/lepo.jpg" alt="Foto do usuário">
+                <div class="comentario-conteudo">
+                    <div class="comentario-usuario">lepolepo</div>
+                     <div class="comentario-texto">Adorei!</div>
+                    <div class="comentario-reacoes">
+                        <i class="fa-solid fa-thumbs-up"></i>5.6k
+                        <i class="fa-solid fa-comments"></i>203
+                        <span class="comentario-avaliacao">
+                            <i class="fa-solid fa-star" style="color: var(--amarelo-star);"></i>
+                            <i class="fa-solid fa-star" style="color: var(--amarelo-star);"></i>
+                            <i class="fa-solid fa-star" style="color: var(--amarelo-star);"></i>
+                            <i class="fa-solid fa-star" style="color: var(--amarelo-star);"></i>
+                            <i class="fa-solid fa-star" style="color: var(--amarelo-star);"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para Avaliar Jogo -->
+    <div id="modal-avaliar-filme" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Avaliar Death Stranding 2</h2>
+                <span class="close">&times;</span>
+            </div>
+            <form id="form-avaliar-filme">
+                <div class="form-group">
+                    <label for="avaliacao-filme">Avaliação:</label>
+                    <div class="rating">
+                        <span class="star" data-rating="1">★</span>
+                        <span class="star" data-rating="2">★</span>
+                        <span class="star" data-rating="3">★</span>
+                        <span class="star" data-rating="4">★</span>
+                        <span class="star" data-rating="5">★</span>
+                    </div>
+                    <input type="hidden" id="rating-value-filme" value="0">
+                </div>
+                
+                <div class="form-group">
+                    <label for="comentario-filme">Comentário:</label>
+                    <textarea id="comentario-filme" rows="4" placeholder="Compartilhe sua opinião sobre o jogo..."></textarea>
+                </div>
+                
+                <div class="form-buttons">
+                    <button type="button" id="cancelar-avaliacao-btn">Cancelar</button>
+                    <button type="submit">Publicar Avaliação</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+<script>
+// Dados do jogo atual
+const jogoAtual = {
+    id: 301,
+    titulo: 'Death Stranding 2: On the beach',
+    desenvolvedor: 'Kojima Productions',
+    ano: '2025',
+    genero: 'Ação, Aventura, Sci-Fi',
+    imagem: 'fotos-jogos/Ds1.jpg',
+    tipo: 'jogo',
+    estrelas: 4.5
+};
+
+// Sistema de avaliações dinâmicas
+function getAvaliacoes() {
+    const data = localStorage.getItem('avaliacoes_jogo_' + jogoAtual.id);
+    return data ? JSON.parse(data) : [];
+}
+
+function setAvaliacoes(avaliacoes) {
+    localStorage.setItem('avaliacoes_jogo_' + jogoAtual.id, JSON.stringify(avaliacoes));
+}
+
+function calcularMediaEstrelas() {
+    const avaliacoes = getAvaliacoes();
+    if (avaliacoes.length === 0) return jogoAtual.estrelas; // Retorna a nota padrão se não há avaliações
+    
+    const soma = avaliacoes.reduce((acc, avaliacao) => acc + avaliacao.rating, 0);
+    return (soma / avaliacoes.length).toFixed(1);
+}
+
+function atualizarMediaExibida() {
+    const mediaElement = document.getElementById('media-estrelas');
+    if (mediaElement) {
+        mediaElement.textContent = calcularMediaEstrelas();
+    }
+}
+
+function adicionarNovaAvaliacao(rating, comentario) {
+    const avaliacoes = getAvaliacoes();
+    const novaAvaliacao = {
+        id: Date.now(),
+        rating: parseInt(rating),
+        comentario: comentario,
+        data: new Date().toISOString(),
+        usuario: 'neymar.realoficial123'
+    };
+    
+    avaliacoes.push(novaAvaliacao);
+    setAvaliacoes(avaliacoes);
+    atualizarMediaExibida();
+    
+    // Disparar evento para notificar outras partes do sistema
+    window.dispatchEvent(new CustomEvent('avaliacaoAdicionada', {
+        detail: { jogoId: jogoAtual.id, novaMedia: calcularMediaEstrelas() }
+    }));
+}
+
+function getListaQueroVer() {
+    const data = localStorage.getItem('queroVer');
+    return data ? JSON.parse(data) : [];
+}
+
+function setListaQueroVer(lista) {
+    localStorage.setItem('queroVer', JSON.stringify(lista));
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const btnQueroVer = document.getElementById('quero-ver-btn');
+    const salvoMsgInline = document.getElementById('salvo-msg-inline');
+    
+    // Verificar se já está salvo
+    verificarStatusQueroVer();
+    
+    // Atualizar média de estrelas ao carregar a página
+    atualizarMediaExibida();
+    
+    // Botão "Quero Jogar"
+    if (btnQueroVer) {
+        btnQueroVer.addEventListener('click', toggleQueroVer);
+    }
+    
+    function verificarStatusQueroVer() {
+        const lista = getListaQueroVer();
+        const jaSalvo = lista.some(item => item.id === jogoAtual.id);
+        
+        if (jaSalvo && btnQueroVer) {
+            btnQueroVer.innerHTML = '<i class="fa-solid fa-check"></i> Já na Lista';
+            btnQueroVer.style.background = '#4caf50';
+            if (salvoMsgInline) salvoMsgInline.style.display = 'inline';
+        }
+    }
+
+    function toggleQueroVer() {
+        const lista = getListaQueroVer();
+        const index = lista.findIndex(item => item.id === jogoAtual.id);
+        
+        if (index > -1) {
+            // Remover da lista
+            lista.splice(index, 1);
+            btnQueroVer.innerHTML = '<i class="fa-solid fa-heart"></i> Quero Jogar';
+            btnQueroVer.style.background = '#e53935';
+            if (salvoMsgInline) salvoMsgInline.style.display = 'none';
+            alert('Removido da sua lista!');
+        } else {
+            // Adicionar à lista
+            lista.push(jogoAtual);
+            btnQueroVer.innerHTML = '<i class="fa-solid fa-check"></i> Já na Lista';
+            btnQueroVer.style.background = '#4caf50';
+            if (salvoMsgInline) salvoMsgInline.style.display = 'inline';
+            alert('Adicionado à sua lista de "Quero Jogar"!');
+        }
+        
+        setListaQueroVer(lista);
+        
+        // Notificar mudança para outras páginas
+        notificarMudancaLista();
+    }
+    
+    // Função para notificar mudanças na lista
+    function notificarMudancaLista() {
+        // Disparar evento customizado
+        window.dispatchEvent(new CustomEvent('queroVerChanged'));
+        console.log('Lista de desejos foi modificada');
+    }
+});
+</script>
+</html>

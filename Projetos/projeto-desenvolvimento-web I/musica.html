@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAMN. - Kendrick Lamar - SuperCritics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="musica.css">
+    <script src="musicaModal.js" defer></script>
+    
+</head>
+<body>
+    <div class="barra-lateral">
+        <button class="nav" onclick="history.back()">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        
+    </div>
+    <section class="musica-detalhe-container">
+        <div class="musica-detalhe-topo">
+            <img src="fotos-musica/kendrick.jpeg" alt="Capa do Álbum DAMN." class="musica-detalhe-capa" />
+            <div class="musica-detalhe-info">
+                <div class="musica-detalhe-titulo">
+                    DAMN. <i class="fa-solid fa-music"></i>
+                </div>
+                <div class="musica-detalhe-meta">
+                    <span>2017</span>
+                    <span class="musica-genero">Hip-Hop, Rap</span>
+                    <span><i class="fa-solid fa-star"></i> <span id="media-estrelas">4.2</span></span>
+                    <span>Duração: 55min</span>
+                </div>
+                <div class="musica-detalhe-sinopse">
+                    Quarto álbum de estúdio do rapper americano Kendrick Lamar, lançado em 14 de abril de 2017. 
+                    O álbum apresenta temas de espiritualidade, religião, família, e questões sociais, 
+                    sendo amplamente aclamado pela crítica e considerado uma obra-prima do hip-hop contemporâneo. 
+                    DAMN. ganhou o Prêmio Pulitzer de Música em 2018, sendo o primeiro álbum de música não-clássica 
+                    e não-jazz a receber a honraria.
+                </div>
+                <div class="elenco-direcao">
+                    <br>
+                    <strong>Artista:</strong> Kendrick Lamar
+                    <br>
+                    <strong>Produção:</strong> Kendrick Lamar, Mike WiLL Made-It, DJ Dahi, Sounwave
+                </div>
+            </div>
+        </div>
+        <div class="avaliar-filme">
+            <div style="text-align: center; margin-bottom: 15px;">
+                <button id="nova-avaliacao-btn" style="
+                    background: #1976d2;
+                    color: white;
+                    border: none;
+                    padding: 12px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    font-size: 20px;
+                    width: 50px;
+                    height: 50px;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3);
+                    transition: all 0.3s;
+                    margin-right: 15px;
+                " onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                
+                <button id="quero-ver-btn" style="
+                    background: #e53935;
+                    color: white;
+                    border: none;
+                    padding: 12px 20px;
+                    border-radius: 25px;
+                    cursor: pointer;
+                    font-size: 14px;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 8px;
+                    box-shadow: 0 4px 12px rgba(229, 57, 53, 0.3);
+                    transition: all 0.3s;
+                " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    <i class="fa-solid fa-heart"></i>
+                    <span>Quero Ouvir</span>
+                </button>
+            </div>
+        </div>
+        <div class="comentarios-titulo">Comentários</div>
+        <div class="comentarios-lista">
+            <div class="comentario-card">
+                <img src="fotos-filmes/perfil1.jpg" alt="Foto do usuário">
+                <div class="comentario-conteudo">
+                    <div class="comentario-usuario">maria.musiclover <i class="fa-solid fa-circle-check" style="color: var(--azul-verificado);"></i></div>
+                    <div class="comentario-texto">
+                        Obra-prima absoluta! Kendrick entrega letras profundas e uma produção impecável. Cada faixa conta uma história e o álbum como um todo é uma experiência transcendental.
+                    </div>
+                    <div class="comentario-reacoes">
+                        <i class="fa-solid fa-thumbs-up"></i> 2.1k
+                        <i class="fa-solid fa-thumbs-down"></i> 12
+                    </div>
+                </div>
+            </div>
+            
+            <div class="comentario-card">
+                <img src="fotos-filmes/perfil2.jpg" alt="Foto do usuário">
+                <div class="comentario-conteudo">
+                    <div class="comentario-usuario">joao.hiphop</div>
+                     <div class="comentario-texto">Álbum fantástico que mostra a genialidade do Kendrick. Mereceu totalmente o Pulitzer!</div>
+                    <div class="comentario-reacoes">
+                        <i class="fa-solid fa-thumbs-up"></i>1.8k
+                        <i class="fa-solid fa-comments"></i>89
+                        <span class="comentario-avaliacao">
+                            <i class="fa-solid fa-star" style="color: var(--amarelo-star);"></i>
+                            <i class="fa-solid fa-star" style="color: var(--amarelo-star);"></i>
+                            <i class="fa-solid fa-star" style="color: var(--amarelo-star);"></i>
+                            <i class="fa-solid fa-star" style="color: var(--amarelo-star);"></i>
+                            <i class="fa-solid fa-star" style="color: var(--amarelo-star);"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para Avaliar Música -->
+    <div id="modal-avaliar-filme" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Avaliar DAMN. - Kendrick Lamar</h2>
+                <span class="close">&times;</span>
+            </div>
+            <form id="form-avaliar-filme">
+                <div class="form-group">
+                    <label for="avaliacao-filme">Avaliação:</label>
+                    <div class="rating">
+                        <span class="star" data-rating="1">★</span>
+                        <span class="star" data-rating="2">★</span>
+                        <span class="star" data-rating="3">★</span>
+                        <span class="star" data-rating="4">★</span>
+                        <span class="star" data-rating="5">★</span>
+                    </div>
+                    <input type="hidden" id="rating-value-filme" value="0">
+                </div>
+                
+                <div class="form-group">
+                    <label for="comentario-filme">Comentário:</label>
+                    <textarea id="comentario-filme" rows="4" placeholder="Compartilhe sua opinião sobre este álbum..."></textarea>
+                </div>
+                
+                <div class="form-buttons">
+                    <button type="button" id="cancelar-avaliacao-btn">Cancelar</button>
+                    <button type="submit">Publicar Avaliação</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+// Dados da música atual
+const musicaAtual = {
+    id: 201,
+    titulo: "DAMN. - Kendrick Lamar",
+    artista: "Kendrick Lamar",
+    ano: "2017",
+    genero: "Hip-Hop, Rap",
+    duracao: "55min",
+    imagem: "fotos-musica/kendrick.jpeg",
+    estrelas: 4.2,
+    tipo: "musica"
+};
+
+// Sistema de avaliações dinâmicas
+function getAvaliacoes() {
+    const data = localStorage.getItem('avaliacoes_musica_' + musicaAtual.id);
+    return data ? JSON.parse(data) : [];
+}
+
+function setAvaliacoes(avaliacoes) {
+    localStorage.setItem('avaliacoes_musica_' + musicaAtual.id, JSON.stringify(avaliacoes));
+}
+
+function calcularMediaEstrelas() {
+    const avaliacoes = getAvaliacoes();
+    if (avaliacoes.length === 0) return musicaAtual.estrelas; // Retorna a nota padrão se não há avaliações
+    
+    const soma = avaliacoes.reduce((acc, avaliacao) => acc + avaliacao.rating, 0);
+    return (soma / avaliacoes.length).toFixed(1);
+}
+
+function atualizarMediaExibida() {
+    const mediaElement = document.getElementById('media-estrelas');
+    if (mediaElement) {
+        mediaElement.textContent = calcularMediaEstrelas();
+    }
+}
+
+function adicionarNovaAvaliacao(rating, comentario) {
+    const avaliacoes = getAvaliacoes();
+    const novaAvaliacao = {
+        id: Date.now(),
+        rating: parseInt(rating),
+        comentario: comentario,
+        data: new Date().toISOString(),
+        usuario: 'neymar.realoficial123'
+    };
+    
+    avaliacoes.push(novaAvaliacao);
+    setAvaliacoes(avaliacoes);
+    atualizarMediaExibida();
+    
+    // Disparar evento para notificar outras partes do sistema
+    window.dispatchEvent(new CustomEvent('avaliacaoAdicionada', {
+        detail: { musicaId: musicaAtual.id, novaMedia: calcularMediaEstrelas() }
+    }));
+}
+
+// Carregar média ao inicializar a página
+document.addEventListener('DOMContentLoaded', function() {
+    atualizarMediaExibida();
+});
+</script>
+</body>
+</html>
