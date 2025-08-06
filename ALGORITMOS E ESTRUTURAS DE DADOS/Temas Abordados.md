@@ -1,20 +1,33 @@
-# ALGORITMOS-E-ESTRUTURAS-DE-DADOS
+# ALGORITMOS E ESTRUTURAS DE DADOS
 
-day one / 05-08-2025
+## Day One — 05/08/2025
 
---- 
+### Revisão
 
-day two / 06-08-2025 
+- Algoritmos  
+- Estruturas de Dados  
+- Etapas do Desenvolvimento  
+- Conceitos Importantes  
+- Variáveis  
+- Tipos de Estruturas  
+- Funções  
 
-  * Ponteiros
-  * ponteiros e vetores
-  * alocaçao dinamica (malloc / free)
-  * alocaçao dinamica de vetores
-  * alocaçao dinamica de matrizes
-  * alocaçao dinaica de estruturas
-  * pesquisas
+### Tópicos Específicos
 
-1- iplementar maxmin123, utilizndo alocaçao dinamica / preeceer vetor com valores aleatorias
-2- execicio iplementar buscas dequecial e binaria / imprimindo numeros de comparaçoes 
+- Algoritmos  
+- Medida de tempo de execução de um programa  
+- Função de Complexidade  
+- Comportamento Assintótico de Funções  
+- Classes de Complexidade  
 
+---
 
+## Day Two — 06/08/2025
+
+- Ponteiros  
+- Ponteiros e Vetores  
+- Alocação Dinâmica (`malloc` / `free`)  
+- Alocação Dinâmica de Vetores  
+- Alocação Dinâmica de Matrizes  
+- Alocação Dinâmica de Estruturas  
+- Pesquisas  
