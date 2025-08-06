@@ -30,4 +30,5 @@
 - Alocação Dinâmica de Vetores  
 - Alocação Dinâmica de Matrizes  
 - Alocação Dinâmica de Estruturas  
-- Pesquisas  
+- Pesquisa em Memória Primaria
+- Pesquisa Sequencial / Binária
