@@ -1,0 +1,10 @@
+# VS Code settings
+.vscode/
+
+# Compiled files
+*.exe
+*.o
+*.obj
+
+# Debug files
+*.pdb
