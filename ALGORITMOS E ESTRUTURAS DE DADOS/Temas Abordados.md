@@ -32,3 +32,11 @@
 - Alocação Dinâmica de Estruturas  
 - Pesquisa em Memória Primaria
 - Pesquisa Sequencial / Binária
+
+---
+## Day three — 06/08/2025
+
+- Rercusividade
+- Chamada de funçao
+- Chamada recursiva
+- 
