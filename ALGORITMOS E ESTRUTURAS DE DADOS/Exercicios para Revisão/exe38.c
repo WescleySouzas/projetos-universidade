@@ -4,7 +4,6 @@
 
 int sorteio(){
     int numero = rand() % 100;
-    printf("%d", numero);
     return numero;
 }
 
