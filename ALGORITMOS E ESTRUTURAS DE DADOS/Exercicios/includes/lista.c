@@ -105,11 +105,14 @@ lista* liberar(lista* L) {
 }
 
 int pares(lista *L){
-    int cont = 0;
+    if(L == NULL)
+        return 0;
     
+    int cont = 0;
     for(int i = 0; i < tamanho(L); i++){
-        if(L->dados[i] % 2 == 0)
+        if(L->dados[i] % 2 == 0){
             cont++;
+        }
     }
     return cont;
 }

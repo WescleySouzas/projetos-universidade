@@ -8,7 +8,7 @@
 */
 
 #include <stdio.h>
-#include "../includes/lista.h"
+#include "includes/lista.h"
 #include <stdlib.h>
 #include <time.h>
 
@@ -16,11 +16,11 @@ void apresentacao(lista *L);
 
 int main(){
     srand(time(NULL));
-    lista *L = inicializar(10);
+    lista *L = inicializar(20);
     apresentacao(L);
 
     for(int i = 1; i <= capacidade(L); i++){
-        if(inserir_fim(L,-25 + rand()%25)){
+        if(inserir_fim(L,-25 + rand()%50)){
             printf("Item %d inserido com sucesso\n", i);
         }
         else
@@ -28,9 +28,9 @@ int main(){
         exibir(L);
         printf("\n");
     }
-    apresentacao(L);
-    L = liberar(L);
+    printf("Total de numeros Pares: %d", pares(L));
 
+    L = liberar(L);
 
 }
 
