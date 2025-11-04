@@ -104,19 +104,6 @@ lista* liberar(lista* L) {
     return NULL;
 }
 
-int pares(lista *L){
-    if(L == NULL)
-        return 0;
-    
-    int cont = 0;
-    for(int i = 0; i < tamanho(L); i++){
-        if(L->dados[i] % 2 == 0){
-            cont++;
-        }
-    }
-    return cont;
-}
-
 bool remover_fim(lista *L) {
     if(vazia(L))
         return false;

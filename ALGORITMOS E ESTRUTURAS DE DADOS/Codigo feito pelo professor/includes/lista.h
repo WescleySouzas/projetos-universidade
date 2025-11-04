@@ -70,15 +70,6 @@ Saída: retorna NULL caso tenha sido liberada
 */
 lista* liberar(lista* L);
 
-
-
-/*
-Verifica se ha numeros pares
-Entrada: Lista L
-Saida: Total de numeros pares
-*/
-int pares(lista* L);
-
 /*
 Remove um item no fim da lista
 Entrada: lista L
